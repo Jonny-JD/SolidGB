@@ -13,7 +13,7 @@ import static org.jimmydev.util.State.OK;
 
 public class ComplexResolver implements Resolver {
 
-    private static ComplexResolver INSTANCE = new ComplexResolver();
+    private static final ComplexResolver INSTANCE = new ComplexResolver();
 
     private ComplexResolver() {
 
@@ -54,12 +54,6 @@ public class ComplexResolver implements Resolver {
     }
 
     private ResponseComplex multiply(ComplexNumber firstNumber, ComplexNumber secondNumber) {
-        Double firstReal = firstNumber.realPart();
-        Double firstImg = firstNumber.imaginePart();
-
-        Double secondReal = secondNumber.realPart();
-        Double secondImg = secondNumber.imaginePart();
-
         return new ResponseComplex(OK, new ComplexNumber(
                 firstNumber.realPart() * secondNumber.realPart() - firstNumber.imaginePart() * secondNumber.imaginePart(),
                 firstNumber.realPart() * secondNumber.imaginePart() + firstNumber.imaginePart() * secondNumber.realPart()

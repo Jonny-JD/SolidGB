@@ -11,10 +11,6 @@ public abstract class ComplexFormatValidator {
                         "(?<operator>[+\\-*/])" +
                         "(?<secondNumber>\\(?-?\\d+\\.?\\d?\\+\\d+\\.?\\d?i)\\)?");
         Matcher matcher = pattern.matcher(expression);
-        if (!matcher.find()) {
-            return false;
-        }
-
-        return true;
+        return matcher.find();
     }
 }

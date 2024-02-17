@@ -28,7 +28,7 @@ public abstract class Parser {
         matcher.find();
 
         expression.setFirstNumber(parseComplexNumber(matcher.group("firstNumber").replaceAll("[()]","")));
-        expression.setSecondNumber(parseComplexNumber(matcher.group("secondNumber").replaceAll("[()]","")));;
+        expression.setSecondNumber(parseComplexNumber(matcher.group("secondNumber").replaceAll("[()]","")));
         switch (matcher.group("operator")) {
             case "+" -> expression.setOperator(Operator.ADDITION);
             case "-" -> expression.setOperator(Operator.SUBTRACTION);
